@@ -1,0 +1,10 @@
+image: registry.gitlab.com/stepandalecky/kml-parser:php7-1
+
+before_script:
+# Install all project dependencies
+- composer install
+
+test:
+  script:
+  - vendor/bin/phpunit tests/StepanDaleckyTests
+  - vendor/bin/phpstan analyse -l 7 src tests

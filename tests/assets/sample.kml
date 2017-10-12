@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
+<kml xmlns="http://www.opengis.net/kml/2.2" id="test">
   <Document>
-    <name>Dobyto test</name>
-    <description>Development test</description>
+    <name>Document name</name>
+    <description>Description</description>
     <Style id="icon-1899-0288D1-normal">
       <IconStyle>
         <color>ffd18802</color>
@@ -40,10 +40,10 @@
       </Pair>
     </StyleMap>
     <Folder>
-      <name>Vrstva bez názvu</name>
+      <name>Unnamed layer</name>
       <Placemark>
-        <name>Praha - Zlý časy</name>
-        <description>[2017] Dobré</description>
+        <name>First spot name</name>
+        <description>First spot description</description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
@@ -52,8 +52,8 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Praha-Holešovice - Kolkovna Argentinská</name>
-        <description>hospoda</description>
+        <name>Second spot name</name>
+        <description>Second spot description</description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
@@ -63,7 +63,7 @@
       </Placemark>
     </Folder>
     <Folder>
-      <name>Moje vrstva</name>
+      <name>Empty layer</name>
     </Folder>
   </Document>
 </kml>

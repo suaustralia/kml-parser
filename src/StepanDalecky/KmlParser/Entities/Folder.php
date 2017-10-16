@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace StepanDalecky\KmlParser\Entities;
 
-use StepanDalecky\KmlParser\Element;
+use StepanDalecky\XmlElement\Element;
 
 class Folder extends Entity
 {

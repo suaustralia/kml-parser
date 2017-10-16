@@ -5,6 +5,7 @@ namespace StepanDalecky\KmlParser;
 
 use StepanDalecky\KmlParser\Entities\Entity;
 use StepanDalecky\KmlParser\Entities\Kml;
+use StepanDalecky\XmlElement\Element;
 
 class Parser extends Entity
 {

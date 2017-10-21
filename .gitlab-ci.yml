@@ -15,3 +15,10 @@ php7-1:
     - docker run --rm -v $(pwd):/project kml-parser:php7-1 composer install
     - docker run --rm -v $(pwd):/project kml-parser:php7-1 vendor/bin/phpstan analyse -l 7 src tests
     - docker run --rm -v $(pwd):/project kml-parser:php7-1 vendor/bin/phpunit tests/StepanDaleckyTests
+
+php7-2:
+  script:
+    - docker build -t kml-parser:php7-2 ci/builds/php7-2
+    - docker run --rm -v $(pwd):/project kml-parser:php7-2 composer install
+    - docker run --rm -v $(pwd):/project kml-parser:php7-2 vendor/bin/phpstan analyse -l 7 src tests
+    - docker run --rm -v $(pwd):/project kml-parser:php7-2 vendor/bin/phpunit tests/StepanDaleckyTests

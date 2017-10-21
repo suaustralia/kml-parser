@@ -1,14 +1,17 @@
-before_script:
-- composer install
+image: docker:latest
+services:
+  - docker:dind
 
-test:7.0:
-  image: registry.gitlab.com/stepandalecky/kml-parser:php7-0
+php7-0:
   script:
-  - vendor/bin/phpunit tests/StepanDaleckyTests
-  - vendor/bin/phpstan analyse -l 7 src tests
+    - docker build -t kml-parser:php7-0 ci/builds/php7-0
+    - docker run --rm -v $(pwd):/project kml-parser:php7-0 composer install
+    - docker run --rm -v $(pwd):/project kml-parser:php7-0 vendor/bin/phpstan analyse -l 7 src tests
+    - docker run --rm -v $(pwd):/project kml-parser:php7-0 vendor/bin/phpunit tests/StepanDaleckyTests
 
-test:7.1:
-  image: registry.gitlab.com/stepandalecky/kml-parser:php7-1
+php7-1:
   script:
-  - vendor/bin/phpunit tests/StepanDaleckyTests
-  - vendor/bin/phpstan analyse -l 7 src tests
+    - docker build -t kml-parser:php7-1 ci/builds/php7-1
+    - docker run --rm -v $(pwd):/project kml-parser:php7-1 composer install
+    - docker run --rm -v $(pwd):/project kml-parser:php7-1 vendor/bin/phpstan analyse -l 7 src tests
+    - docker run --rm -v $(pwd):/project kml-parser:php7-1 vendor/bin/phpunit tests/StepanDaleckyTests

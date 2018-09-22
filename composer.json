@@ -29,6 +29,14 @@
             "": "src/"
         }
     },
+    "scripts": {
+        "units": "phpunit tests/StepanDaleckyTests",
+        "stan": "phpstan analyse -l 7 -vvv src tests",
+        "check": [
+            "@units",
+            "@stan"
+        ]
+    },
     "autoload-dev": {
         "psr-4": {
             "StepanDaleckyTests\\": "tests/StepanDaleckyTests/"

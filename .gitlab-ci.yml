@@ -1,24 +1,19 @@
-image: docker:latest
-services:
-  - docker:dind
+before_script:
+  - apt-get update && apt-get install -y zlib1g-dev && docker-php-ext-install zip
+  - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+  - composer install --no-interaction --no-progress --prefer-dist
 
 php7-0:
+  image: php:7.0-fpm
   script:
-    - docker build -t kml-parser:php7-0 ci/builds/php7-0
-    - docker run --rm -v $(pwd):/project kml-parser:php7-0 composer install
-    - docker run --rm -v $(pwd):/project kml-parser:php7-0 vendor/bin/phpstan analyse -l 7 src tests
-    - docker run --rm -v $(pwd):/project kml-parser:php7-0 vendor/bin/phpunit tests/StepanDaleckyTests
+    - composer check
 
 php7-1:
+  image: php:7.1-fpm
   script:
-    - docker build -t kml-parser:php7-1 ci/builds/php7-1
-    - docker run --rm -v $(pwd):/project kml-parser:php7-1 composer install
-    - docker run --rm -v $(pwd):/project kml-parser:php7-1 vendor/bin/phpstan analyse -l 7 src tests
-    - docker run --rm -v $(pwd):/project kml-parser:php7-1 vendor/bin/phpunit tests/StepanDaleckyTests
+    - composer check
 
 php7-2:
+  image: php:7.2-fpm
   script:
-    - docker build -t kml-parser:php7-2 ci/builds/php7-2
-    - docker run --rm -v $(pwd):/project kml-parser:php7-2 composer install
-    - docker run --rm -v $(pwd):/project kml-parser:php7-2 vendor/bin/phpstan analyse -l 7 src tests
-    - docker run --rm -v $(pwd):/project kml-parser:php7-2 vendor/bin/phpunit tests/StepanDaleckyTests
+    - composer check

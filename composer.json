@@ -20,9 +20,7 @@
         "stepandalecky/xml-element": "^0.2.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.3",
-        "tracy/tracy": "^2.4",
-        "phpstan/phpstan": "^0.8.5"
+        "phpunit/phpunit": "^6.5"
     },
     "autoload": {
         "psr-4": {
@@ -31,10 +29,8 @@
     },
     "scripts": {
         "units": "phpunit tests/StepanDaleckyTests",
-        "stan": "phpstan analyse -l 7 -vvv src tests",
         "check": [
-            "@units",
-            "@stan"
+            "@units"
         ]
     },
     "autoload-dev": {

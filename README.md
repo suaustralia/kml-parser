@@ -2,7 +2,6 @@
 
 [![Latest Stable Version](https://poser.pugx.org/stepandalecky/kml-parser/v/stable)](https://packagist.org/packages/stepandalecky/kml-parser)
 [![License](https://poser.pugx.org/stepandalecky/kml-parser/license)](https://packagist.org/packages/stepandalecky/kml-parser)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 
 The most intuitive KML parser. Each part of the file is represented by a special class,
 so everything you need is accessible via predictable and hinted methods.

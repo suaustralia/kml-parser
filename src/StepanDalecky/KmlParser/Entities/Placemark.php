@@ -11,6 +11,11 @@ class Placemark extends Entity
 		return $this->element->getChild('name')->getValue();
 	}
 
+	public function hasDescription(): bool
+	{
+		return $this->element->hasChild('description');
+	}
+
 	public function getDescription(): string
 	{
 		return $this->element->getChild('description')->getValue();

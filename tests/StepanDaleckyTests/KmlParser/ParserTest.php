@@ -64,7 +64,11 @@ class ParserTest extends TestCase
 		$placemark1 = $placemarks[0];
 		self::assertSame('First spot name', $placemark1->getName());
 		self::assertSame('First spot description', $placemark1->getDescription());
+		self::assertTrue($placemark1->hasDescription());
 		self::assertSame('#icon-1899-0288D1', $placemark1->getStyleUrl());
+
+		$placemark2 = $placemarks[1];
+		self::assertFalse($placemark2->hasDescription());
 
 		$point = $placemark1->getPoint();
 		self::assertSame('

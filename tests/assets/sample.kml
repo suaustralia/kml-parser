@@ -52,8 +52,7 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Second spot name</name>
-        <description>Second spot description</description>
+        <name>Second spot name, has no description</name>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>

@@ -17,7 +17,7 @@
     },
     "require": {
         "php": ">=7.0",
-        "stepandalecky/xml-element": "^0.1.0"
+        "stepandalecky/xml-element": "^0.2.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.3",

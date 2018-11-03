@@ -1,11 +1,11 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace StepanDalecky\KmlParser\Entities;
 
 use StepanDalecky\XmlElement\Element;
 
-class StyleMap extends Entity
+class Schema extends Entity
 {
 
 	public function getId(): string
@@ -18,13 +18,18 @@ class StyleMap extends Entity
 		return $this->element->hasAttribute('id');
 	}
 
+	public function getName(): string
+	{
+		return $this->element->getAttribute('name');
+	}
+
 	/**
-	 * @return Pair[]
+	 * @return SimpleField[]
 	 */
-	public function getPairs(): array
+	public function getSimpleFields(): array
 	{
 		return array_map(function (Element $element) {
-			return new Pair($element);
-		}, $this->element->getChildren('Pair'));
+			return new SimpleField($element);
+		}, $this->element->getChildren('SimpleField'));
 	}
 }

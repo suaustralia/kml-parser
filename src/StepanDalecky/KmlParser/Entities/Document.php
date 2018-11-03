@@ -8,14 +8,34 @@ use StepanDalecky\XmlElement\Element;
 class Document extends Entity
 {
 
+	public function getId(): string
+	{
+		return $this->element->getAttribute('id');
+	}
+
+	public function hasId(): bool
+	{
+		return $this->element->hasAttribute('id');
+	}
+
 	public function getName(): string
 	{
 		return $this->element->getChild('name')->getValue();
 	}
 
+	public function hasName(): bool
+	{
+		return $this->element->hasChild('name');
+	}
+
 	public function getDescription(): string
 	{
 		return $this->element->getChild('description')->getValue();
+	}
+
+	public function hasDescription(): bool
+	{
+		return $this->element->hasChild('description');
 	}
 
 	/**
@@ -31,6 +51,21 @@ class Document extends Entity
 	public function getStyleMap(): StyleMap
 	{
 		return new StyleMap($this->element->getChild('StyleMap'));
+	}
+
+	public function hasStyleMap(): bool
+	{
+		return $this->element->hasChild('StyleMap');
+	}
+
+	public function getSchema(): Schema
+	{
+		return new Schema($this->element->getChild('Schema'));
+	}
+
+	public function hasSchema(): bool
+	{
+		return $this->element->hasChild('Schema');
 	}
 
 	/**

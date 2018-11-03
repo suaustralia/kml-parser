@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document id="root_doc">
+        <Schema name="Jalan Kabupaten Kec Parindu" id="Jalan_Kabupaten_Kec_johndoe">
+            <SimpleField name="No_Ruas" type="int" />
+            <SimpleField name="Nm_Ruas" type="string" />
+            <SimpleField name="Panjang" type="float" />
+        </Schema>
+        <Folder>
+            <name>Jalan_Kabupaten_Kec_Parindu</name>
+            <Placemark>
+                <Style>
+                    <LineStyle>
+                        <color>ff0000ff</color>
+                    </LineStyle>
+                    <PolyStyle>
+                        <fill>0</fill>
+                    </PolyStyle>
+                </Style>
+                <ExtendedData>
+                    <SchemaData schemaUrl="#Jalan_Kabupaten_Kec_johndoe">
+                        <SimpleData name="No_Ruas">14</SimpleData>
+                        <SimpleData name="Nm_Ruas">014_JL John - Doe</SimpleData>
+                        <SimpleData name="Panjang">8.78400000000</SimpleData>
+                    </SchemaData>
+                </ExtendedData>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>

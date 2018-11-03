@@ -13,6 +13,11 @@ class Folder extends Entity
 		return $this->element->getChild('name')->getValue();
 	}
 
+	public function hasName(): bool
+	{
+		return $this->element->hasChild('name');
+	}
+
 	/**
 	 * @return Placemark[]
 	 */

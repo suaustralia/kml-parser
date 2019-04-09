@@ -1,5 +1,5 @@
 {
-    "name": "stepandalecky/kml-parser",
+    "name": "suqld/kml-parser",
     "type": "library",
     "description": "Turn KML file into objects",
     "keywords": ["kml", "parse", "parser", "google maps", "google earth"],

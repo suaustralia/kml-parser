@@ -56,6 +56,16 @@ class Placemark extends Entity
 		return $this->element->hasChild('Point');
 	}
 
+	public function getPolygon(): Polygon
+	{
+		return new Polygon($this->element->getChild('Polygon'));
+	}
+
+	public function hasPolygon(): bool
+	{
+		return $this->element->hasChild('Polygon');
+	}
+
 	public function getExtendedData(): ExtendedData
 	{
 		return new ExtendedData($this->element->getChild('ExtendedData'));

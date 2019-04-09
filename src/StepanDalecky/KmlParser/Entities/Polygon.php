@@ -13,14 +13,17 @@ class Polygon extends Entity
 	}
 
 	/**
-	 * @return string[]
+	 * @return Coordinate[]
 	 */
 	public function getCoordinates(): array
 	{
-		return array_map(
-			'trim',
-			explode("\n", trim($this->getLinearRing()->getChild('coordinates')->getValue()))
-		);
+		$coordinates = [];
+		$strings = explode("\n", trim($this->getLinearRing()->getChild('coordinates')->getValue()));
+		foreach ($strings as $string) {
+			$coordinates[] = new Coordinate($string);
+		}
+
+		return $coordinates;
 	}
 
 	private function getLinearRing(): Element

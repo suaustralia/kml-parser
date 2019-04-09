@@ -5,9 +5,8 @@ namespace StepanDalecky\KmlParser\Entities;
 
 class Point extends Entity
 {
-
-	public function getCoordinates(): string
+	public function getCoordinate(): Coordinate
 	{
-		return trim($this->element->getChild('coordinates')->getValue());
+		return new Coordinate($this->element->getChild('coordinates')->getValue());
 	}
 }

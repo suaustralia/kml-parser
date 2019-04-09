@@ -17,7 +17,10 @@ class Polygon extends Entity
 	 */
 	public function getCoordinates(): array
 	{
-		return explode("\n", $this->getLinearRing()->getChild('coordinates')->getValue());
+		return array_map(
+			'trim',
+			explode("\n", trim($this->getLinearRing()->getChild('coordinates')->getValue()))
+		);
 	}
 
 	private function getLinearRing(): Element

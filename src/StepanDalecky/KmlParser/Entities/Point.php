@@ -8,6 +8,6 @@ class Point extends Entity
 
 	public function getCoordinates(): string
 	{
-		return $this->element->getChild('coordinates')->getValue();
+		return trim($this->element->getChild('coordinates')->getValue());
 	}
 }
